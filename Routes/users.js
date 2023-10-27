@@ -74,7 +74,7 @@ router.post("/signup", async (req, res) => {
         const secret = activationKey;
         const token = generateActivationToken(hashedUser._id, secret); 
         
-      const link = `https://url-shortener-nithya.netlify.app/activate/${hashedUser._id}?activateToken=${token}`;
+      const link = `https://url-short-nithya.netlify.app/activate/${hashedUser._id}?activateToken=${token}`;
         // const link = `https://shiny-llama-b7e94c.netlify.app/activate/${hashedUser._id}?activateToken=${token}`;
         const mailOptions = {
           from: process.env.USER,
@@ -126,7 +126,7 @@ router.post("/signup", async (req, res) => {
         const secret = activationKey;
         const token = generateActivationToken(user._id, secret); 
         
-        const link = `https://url-shortener-nithya.netlify.app/activate/${user._id}?activateToken=${token}`;
+        const link = `https://url-short-nithya.netlify.app/activate/${user._id}?activateToken=${token}`;
         // const link = `https://shiny-llama-b7e94c.netlify.app/activate/${user._id}?activateToken=${token}`;
         const mailOptions = {
           from: process.env.USER,
@@ -214,7 +214,7 @@ router.post("/forgot-password", async(req, res) => {
         const secret = Math.random().toString(36).substring(2,11);
         const token = generateToken(user._id, secret); 
         
-        const link = `https://url-shortener-nithya.netlify.app/authorize/?id=${user._id}&token=${token}`;
+        const link = `https://url-short-nithya.netlify.app/authorize/?id=${user._id}&token=${token}`;
       // const link = `https://shiny-llama-b7e94c.netlify.app/authorize/?id=${user._id}&token=${token}`;
         const mailOptions = {
           from: process.env.USER,
